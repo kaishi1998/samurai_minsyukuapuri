@@ -28,14 +28,9 @@ public class VerificationTokenService {
 	}
 	
 	//トークンの文字列で検索した結果を返す
-	public VerificationToken geVerificationToken(String token) {
+	public VerificationToken getVerificationToken(String token) {
 		return verificationTokenRepository.findByToken(token);
 		
-	}
-
-	public VerificationToken getVerificationToken(String token) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
 	}
 
 }

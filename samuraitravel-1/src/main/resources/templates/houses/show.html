@@ -1,19 +1,21 @@
 <!DOCTYPE html>
- <html xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-     <head>
-        <div th:replace="~{fragment :: meta}"></div>    
-              
-         <div th:replace="~{fragment :: styles}"></div>
-         
-         
-         <title>民宿詳細</title>     
-     </head>
-     <body>
-         <div class="samuraitravel-wrapper">
-             <!-- ヘッダー -->
-            <div th:replace="~{fragment :: header}"></div>
-             
-            <main>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+	<head>
+		<div th:replace="~{fragment :: meta}"></div>
+		
+		<div th:replace="~{fragment :: styles}"></div>
+		
+		<!-- Flatpickr -->
+		<link rel="stylesheet" href="https://cdn.jsdeliver.net/npm/flatpickr/dist/flatpickr.min.css">
+		
+		<title>民宿詳細</title>
+	</head>
+	<body>
+		<div class="samuraitravel-warapper">
+			<!-- ヘッダー　-->
+			<div th:replace="~{fragment :: header}"></div>
+			
+	 <main>
                 <div class="container pt-4 pb-5 samuraitravel-container">
                     <div class="row justify-content-center">
                         <div class="col-xxl-9 col-xl-10 col-lg-11">
@@ -32,9 +34,9 @@
                             </div>                                                                         
                             
                             <div class="mb-4">
-                                <img th:if="${house.getImageName()}" th:src="@{/storage/__${house.getImageName()}__}" class="w-100" alt="民宿画像">
-                                <img th:unless="${house.getImageName()}" th:src="@{/images/noImage.png}" class="w-100" alt="NO IMAGE">
-                            </div> 
+                                 <img th:if="${house.getImageName()}" th:src="@{/storage/__${house.getImageName()}__}" class="w-100" alt="民宿画像">
+                                 <img th:unless="${house.getImageName()}" th:src="@{/images/noImage.png}" class="w-100" alt="NO IMAGE">
+                             </div>  
                             
                             <div class="container">  
                                 <div class="row">
@@ -148,11 +150,17 @@
                     </div>
                 </div>
             </main>
-             
-             <!-- フッター -->
-            <div th:replace="~{fragment :: footer}"></div>
-         </div>    
-         
-        <div th:replace="~{fragment :: scripts}"></div> 
-     </body>
- </html>
+			
+			<!-- フッター　-->
+			<div th:replace="~{fragment :: footer}"></div>
+		</div>
+		
+		<div th:replace="~{fragment :: scripts}"></div>
+		
+		<!-- Flatpickr --> 		
+		 <script src="https://cdn.jsdeliver.net/npm/flatpickr"></script>
+		<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+        <script th:src="@{/js/flatpickr.js}"></script> 
+		
+	</body>
+</html>
